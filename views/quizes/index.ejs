@@ -1,3 +1,9 @@
 <% var i, qLen; for (i=0, qLen = quizes.length; i<qLen; i++){ %>
     <p><a href="/quizes/<%= quizes[i].id %>" ><%= quizes[i].pregunta %></a></p>
 <% } %>
+
+<form method="get" action="/quizes">
+    <p>Busqueda</p>
+    <input type="text" name="search" placeholder="Texto de busqueda"/><br>
+    <input type="submit" value="Enviar"/>
+</form>
