@@ -1,6 +1,12 @@
 <% var i, qLen; for (i=0, qLen = quizes.length; i<qLen; i++){ %>
-    <p><a href="/quizes/<%= quizes[i].id %>" ><%= quizes[i].pregunta %></a>
-        <a href="/quizes/<%= quizes[i].id %>/edit"><button>editar</button></a></p>
+    <p> <a href="/quizes/<%= quizes[i].id %>" ><%= quizes[i].pregunta %></a>
+        <a href="/quizes/<%= quizes[i].id %>/edit"><button>editar</button></a>
+        <form method="post" action="/quizes/<%= quizes[i].id %>?_method=delete">
+            <button type="submit" onClick="return confirm('Borrar: <%= quizes[i].pregunta %>');">
+                borrar
+            </button>
+        </form>
+    </p>
 <% } %>
 
 <form method="get" action="/quizes">

@@ -100,3 +100,10 @@ exports.update = function(req, res) {
         }
     ).catch(function(error){next(error)});
 };
+
+//DELETE /quizes/:quizId
+exports.delete = function(req,res){
+    req.quiz.destroy().then(function(){
+        res.redirect('/quizes');
+    }).catch(function(error){next(error)});
+};
