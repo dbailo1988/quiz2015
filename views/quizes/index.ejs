@@ -1,5 +1,6 @@
 <% var i, qLen; for (i=0, qLen = quizes.length; i<qLen; i++){ %>
-    <p><a href="/quizes/<%= quizes[i].id %>" ><%= quizes[i].pregunta %></a></p>
+    <p><a href="/quizes/<%= quizes[i].id %>" ><%= quizes[i].pregunta %></a>
+        <a href="/quizes/<%= quizes[i].id %>/edit"><button>editar</button></a></p>
 <% } %>
 
 <form method="get" action="/quizes">
